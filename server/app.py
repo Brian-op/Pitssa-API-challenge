@@ -2,7 +2,7 @@ from flask import Flask
 from flask_migrate import Migrate
 from .models import db
 from .config import Config
-from .controllers import restaurant_controller, pizza_controller, restaurant_pizza_controller
+# from .controllers import restaurant_controller, pizza_controller, restaurant_pizza_controller
 
 
 
