@@ -9,6 +9,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 pipenv = "*"
 shell = "*"
+sqlalchemy-serializer = "*"
 
 [dev-packages]
 
