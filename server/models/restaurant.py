@@ -1,4 +1,4 @@
-from .import db
+from . import db
 class Restaurant(db.Model):
     __tablename__= 'restaurants'
 
