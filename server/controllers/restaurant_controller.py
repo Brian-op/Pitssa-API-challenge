@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, abort
+from flask import Blueprint, jsonify
 from server.models import Restaurant
 
 restaurant_bp = Blueprint('restaurant_bp', __name__)

@@ -4,7 +4,7 @@ from server.models import RestaurantPizza, Pizza, Restaurant, db
 restaurant_pizza_bp = Blueprint('restaurant_pizza_bp', __name__)
 
 
-@restaurant_pizza_bp.route('restaurant_pizzas', methods = ['POST'])
+@restaurant_pizza_bp.route('/restaurant_pizzas', methods = ['POST'])
 def make_restaurant_pitssa():
     data = request.get_json()
 
