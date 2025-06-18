@@ -1,11 +1,10 @@
-from flask import Blueprint ,request, jsonify
+from flask import Blueprint, request, jsonify
 from server.models import RestaurantPizza, Pizza, Restaurant, db
 
 restaurant_pizza_bp = Blueprint('restaurant_pizza_bp', __name__)
 
-
-@restaurant_pizza_bp.route('/restaurant_pizzas', methods = ['POST'])
-def make_restaurant_pitssa():
+@restaurant_pizza_bp.route('/', methods=['POST'])
+def make_restaurant_pizza():
     data = request.get_json()
 
     price = data.get("price")
@@ -21,7 +20,6 @@ def make_restaurant_pitssa():
         restaurant_id=restaurant_id
     )
 
-
     db.session.add(new_resPrice)
     db.session.commit()
 
@@ -31,8 +29,6 @@ def make_restaurant_pitssa():
     result = {
         "id": new_resPrice.id,
         "price": new_resPrice.price,
-        "pizza_id": pizza_id,
-        "restaurant_id": restaurant_id,
         "pizza": {
             "id": pizza.id,
             "name": pizza.name,
@@ -46,4 +42,3 @@ def make_restaurant_pitssa():
     }
 
     return jsonify(result), 201
-    

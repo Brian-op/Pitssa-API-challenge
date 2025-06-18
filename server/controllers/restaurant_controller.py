@@ -1,9 +1,10 @@
 from flask import Blueprint, jsonify
-from server.models import Restaurant
+from server.models import Restaurant, db
 
 restaurant_bp = Blueprint('restaurant_bp', __name__)
 
-@restaurant_bp.route('/restaurants', methods=['GET'])
+@restaurant_bp.route('/', methods=['GET'])
+
 def get_restaurants():
     restaurants = Restaurant.query.all()
     result = [
@@ -14,7 +15,8 @@ def get_restaurants():
     ]
     return jsonify(result), 200
 
-@restaurant_bp.route('/restaurants/<int:id>', methods=['GET'])
+@restaurant_bp.route('/<int:id>', methods=['GET'])
+
 def get_restaurant(id):
     restaurant = Restaurant.query.get(id)
     if not restaurant:
@@ -34,13 +36,13 @@ def get_restaurant(id):
     }
     return jsonify(result), 200
 
-@restaurant_bp.route('/restaurants/<int:id>', methods=['DELETE'])
+@restaurant_bp.route('/<int:id>', methods=['DELETE'])
 def delete_restaurant(id):
     restaurant = Restaurant.query.get(id)
     if not restaurant:
         return jsonify({"error": "Restaurant not found"}), 404
 
-    from server.models import db
+    
     db.session.delete(restaurant)
     db.session.commit()
     return '', 204
