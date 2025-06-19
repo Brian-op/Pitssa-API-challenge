@@ -15,8 +15,8 @@ with app.app_context():
     RestaurantPizza.query.delete()
 
     # Create Restaurants
-    r1 = Restaurant(name="Mama Mia", address="123 Pizza St")
-    r2 = Restaurant(name="Papa's Pizzeria", address="456 Cheese Ave")
+    r1 = Restaurant(name="Mama Mia", address=" Ngong Lane St")
+    r2 = Restaurant(name="Papa's Pizzeria", address=" Kahawa West")
     db.session.add_all([r1, r2])
 
     # Create Pizzas
@@ -25,9 +25,9 @@ with app.app_context():
     db.session.add_all([p1, p2])
 
     # Create RestaurantPizzas
-    rp1 = RestaurantPizza(price=10.0, restaurant=r1, pizza=p1)
-    rp2 = RestaurantPizza(price=12.5, restaurant=r1, pizza=p2)
-    rp3 = RestaurantPizza(price=11.0, restaurant=r2, pizza=p1)
+    rp1 = RestaurantPizza(price=10, restaurant=r1, pizza=p1)
+    rp2 = RestaurantPizza(price=12, restaurant=r1, pizza=p2)
+    rp3 = RestaurantPizza(price=11, restaurant=r2, pizza=p1)
     db.session.add_all([rp1, rp2, rp3])
 
     db.session.commit()
