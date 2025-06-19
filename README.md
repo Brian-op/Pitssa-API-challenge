@@ -6,27 +6,29 @@ A RESTful Flask API for managing pizzas, restaurants, and their price offerings.
 
 ##  Setup Instructions
 
-1. **Clone the repo**
+1. **Fork the repo**
+
+2. **Clone the repo**
 
 ```bash
 git clone <your-repo-url>
 cd <your-project-folder>
 ```
 
-2. **Set up virtual environment with Pipenv**
+3. **Set up virtual environment with Pipenv**
 
 ```bash
 pipenv install
 pipenv shell
 ```
 
-3. **Set environment variable for Flask**
+4. **Set environment variable for Flask**
 
 ```bash
 export FLASK_APP=server
 ```
 
-4. **Run the app**
+5. **Run the app**
 
 ```bash
 flask run
